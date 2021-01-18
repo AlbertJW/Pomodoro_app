@@ -3,7 +3,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 
-song = AudioSegment.from_mp3("star_tours-loud.mp3")
+SONG = AudioSegment.from_mp3("star_tours-loud.mp3")
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -59,13 +59,13 @@ def count_down(count):
         TIMER = window.after(1000, count_down, count - 1)
     else:
         if REPS < 8:
-            play(song)
+            play(SONG)
             start_timer()
             if REPS % 2 == 0:
                 checkmarks = (REPS // 2) * "✔"
                 checkmark_label.config(text=checkmarks)
         else:
-            play(song)
+            play(SONG)
             REPS = 0
 
 
